@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="media-item" wx:for="{{mediaList}}" wx:key="id">
+    <view class="media-row">
+      <!-- 播放图标 -->
+      <text class="play-icon" data-id="{{item.id}}" bindtap="goDetail">▶</text>
+      <view class="media-info" bindtap="goDetail" data-id="{{item.id}}">
+        <text class="title">{{item.title}}</text>
+        <text class="desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <text class="placeholder">待补充...</text>
+</view>
+

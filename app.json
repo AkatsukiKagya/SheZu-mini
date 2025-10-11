@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/SheZu/SheZu",
+    "pages/logs/logs",
+    "pages/media-list/media-list",
+    "pages/media-detail/media-detail",
+    "pages/sing-mode/sing-mode"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#07c160",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/assets/icons/81x81.png",
+        "selectedIconPath": "/assets/icons/81x81.png"
+      },
+      {
+        "pagePath": "pages/SheZu/SheZu",
+        "text": "介绍",
+        "iconPath": "/assets/icons/81x81.png",
+        "selectedIconPath": "/assets/icons/81x81.png"
+      },
+      {
+        "pagePath": "pages/media-list/media-list",
+        "text": "音视频",
+        "iconPath": "/assets/icons/81x81.png",
+        "selectedIconPath": "/assets/icons/81x81.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

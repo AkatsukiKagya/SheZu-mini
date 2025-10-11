@@ -1,0 +1,16 @@
+<view class="sing-mode">
+  <text class="song-title">{{title}}</text>
+  
+  <audio
+    class="audio-player"
+    src="{{audio}}"
+    controls
+    autoplay
+    name="{{title}}"
+    author="畲族数字博物馆">
+  </audio>
+
+  <view class="hint">
+    <text>🎶 现在可以边听边唱啦！</text>
+  </view>
+</view>

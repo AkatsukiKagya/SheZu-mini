@@ -1,0 +1,27 @@
+<!--pages/SheZu/SheZu.wxml-->
+<view class="container">
+  <view class="title">畲族文化传播</view>
+
+  <view class="section">
+    <text class="section-title">📖 畲族简介</text>
+    <text class="section-text">
+      畲族是中国南方的少数民族，主要分布在福建、浙江、江西和广东一带，
+      以独特的语言、服饰和习俗著称。
+    </text>
+  </view>
+
+  <view class="section">
+    <text class="section-title">👘 传统服饰</text>
+    <image class="image" src="/assets/images/SheZuClothes.jpg" mode="widthFix"/>
+    <text class="section-text">
+      畲族妇女传统服饰以青色为主，绣有凤凰、龙等图案，寓意吉祥。
+    </text>
+  </view>
+
+  <view class="section">
+    <text class="section-title">🎉 传统节日</text>
+    <text class="section-text">
+      三月三是畲族最重要的节日，人们会祭祖、唱山歌、对歌传情。
+    </text>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+<view class="container">
+
+<!-- 返回按钮 -->
+<view class="header">
+  <text class="back-btn" bindtap="goBack">← 返回</text>
+</view>
+
+<!-- 视频播放器 -->
+<video wx:if="{{mode === 'video'}}"
+       src="{{media.video}}"
+       controls
+       autoplay
+       objectFit="contain"
+       class="video-player">
+</video>
+
+<!-- 音频播放器（跟唱模式） -->
+<audio wx:if="{{mode === 'audio'}}"
+       src="{{media.audio}}"
+       controls
+       autoplay
+       loop
+       class="audio-player">
+</audio>
+
+<!-- 模式切换按钮 -->
+<view class="controls">
+  <button bindtap="switchMode">
+    {{mode === 'video' ? '切换到跟唱模式' : '切换回视频模式'}}
+  </button>
+</view>
+
+<!-- 描述 -->
+<view class="desc">
+  <text class="title">{{media.title}}</text>
+  <text class="description">{{media.desc}}</text>
+</view>
+
+</view>
