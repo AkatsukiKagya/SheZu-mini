@@ -1,0 +1,21 @@
+<!--pages/test-page/test-page.wxml-->
+
+<view class="container">
+  <text>pages/test-page/test-page.wxml</text>
+  <!-- 视频播放器 -->
+  <!-- https://raw.githubusercontent.com/AkatsukiKagya/Aka-media/v1.0/media/shezu/videos/caicha.mp4 -->
+  <video 
+    id="myVideo"
+    src="https://raw.githubusercontent.com/AkatsukiKagya/Aka-media/v1.2/media/shezu/videos/caicha.mp4"
+    controls
+    autoplay="{{autoplay}}"
+    object-fit="contain"
+    bindended="onVideoEnded"
+    class="video-player">
+  </video>
+
+  <!-- 重新播放按钮 -->
+  <button wx:if="{{showReplay}}" bindtap="replayVideo" class="replay-btn">
+    重新播放
+  </button>
+</view>

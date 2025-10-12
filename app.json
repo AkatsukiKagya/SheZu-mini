@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/media-list/media-list",
     "pages/media-detail/media-detail",
-    "pages/sing-mode/sing-mode"
+    "pages/sing-mode/sing-mode",
+    "pages/test-page/test-page"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -33,6 +34,12 @@
       {
         "pagePath": "pages/media-list/media-list",
         "text": "音视频",
+        "iconPath": "/assets/icons/81x81.png",
+        "selectedIconPath": "/assets/icons/81x81.png"
+      },
+      {
+        "pagePath": "pages/test-page/test-page",
+        "text": "测试页面",
         "iconPath": "/assets/icons/81x81.png",
         "selectedIconPath": "/assets/icons/81x81.png"
       }
