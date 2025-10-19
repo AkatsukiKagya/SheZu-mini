@@ -1,48 +1,93 @@
 // pages/media-list/media-list.js
-const mediaList = [
-  {
-    id: 1,
-    title: "采茶歌",
-    desc: "畲族传统劳动歌，旋律轻快明朗。",
-    cover: "http://121.40.247.80:5173/src/assets/images/caicha.png",
-    video: "https://akatsukikagya.github.io/Aka-media/media/shezu/videos/test.mp4",
-    audio: "http://121.40.247.80:5173/src/assets/audio/caicha.mp3"
-  },
-  {
-    id: 2,
-    title: "山歌唱给有情人",
-    desc: "畲族情歌代表作之一，真挚动人。",
-    cover: "http://121.40.247.80:5173/src/assets/images/shange.png",
-    video: "http://121.40.247.80:5173/src/assets/videos/shange.mp4",
-    audio: "http://121.40.247.80:5173/src/assets/audio/shange.mp3"
-  },
-  {
-    id: 3,
-    title: "祭祖歌",
-    desc: "庄重肃穆的祭祀歌，表达敬祖之情。",
-    cover: "http://121.40.247.80:5173/src/assets/images/jizu.png",
-    video: "http://121.40.247.80:5173/src/assets/videos/jizu.mp4",
-    audio: "http://121.40.247.80:5173/src/assets/audio/jizu.mp3"
-  },
-  {
-    id: 4,
-    title: "高皇歌",
-    desc: "畲族古老史诗，讲述民族起源传说。",
-    cover: "http://121.40.247.80:5173/src/assets/images/gaohuang.png",
-    video: "http://121.40.247.80:5173/src/assets/videos/gaohuang.mp4",
-    audio: "http://121.40.247.80:5173/src/assets/audio/gaohuang.mp3"
-  }
-];
+const { t, getCurrentLanguage } = require('../../utils/i18n');
+
+const { getMediaList } = require('../../utils/media');
 
 Page({
   data: {
-    mediaList: mediaList
+    mediaList: [],
+    texts: {}
   },
 
-  goDetail(e) {
-    const id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: `/pages/media-detail/media-detail?id=${id}`
+  onLoad() {
+    console.log("媒体列表页面加载完成");
+    this.setData({ mediaList: getMediaList() });
+    this.updateTexts();
+    this.setupLanguageListener();
+  },
+
+  onShow() {
+    this.updateTexts();
+  },
+
+  // 设置语言切换监听器
+  setupLanguageListener() {
+    wx.eventBus = wx.eventBus || {
+      listeners: {},
+      on: function(event, callback) {
+        if (!this.listeners[event]) {
+          this.listeners[event] = [];
+        }
+        this.listeners[event].push(callback);
+      },
+      emit: function(event, data) {
+        if (this.listeners[event]) {
+          this.listeners[event].forEach(callback => callback(data));
+        }
+      }
+    };
+    
+    wx.eventBus.on('languageChanged', (data) => {
+      this.updateTexts();
     });
+  },
+
+  // 更新多语言文本
+  updateTexts() {
+    this.setData({
+      texts: {
+        title: t('media.title'),
+        placeholder: t('media.placeholder')
+      }
+    });
+  },
+
+  // 跳转到详情页面
+  goDetail(e) {
+    console.log('点击事件触发:', e);
+    const id = e.currentTarget.dataset.id;
+    console.log('获取到的ID:', id, '类型:', typeof id);
+    
+    if (!id) {
+      console.error('ID为空或未定义');
+      wx.showToast({
+        title: '参数错误',
+        icon: 'error'
+      });
+      return;
+    }
+    
+    const url = `/pages/media-detail/media-detail?id=${id}`;
+    console.log('准备跳转到:', url);
+    
+    wx.navigateTo({
+      url: url,
+      success: (res) => {
+        console.log('跳转成功:', res);
+      },
+      fail: (err) => {
+        console.error('跳转失败，错误详情:', err);
+        wx.showModal({
+          title: '跳转失败',
+          content: `错误信息: ${JSON.stringify(err)}`,
+          showCancel: false
+        });
+      }
+    });
+  },
+
+  // 语言切换事件处理
+  onLanguageChanged(e) {
+    this.updateTexts();
   }
 });

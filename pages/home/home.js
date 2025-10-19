@@ -1,15 +1,12 @@
-// pages/sing-mode/sing-mode.js
 const { t, getCurrentLanguage } = require('../../utils/i18n');
 
 Page({
   data: {
-    songTitle: '跟唱模式',
     // 多语言文本
     texts: {}
   },
 
   onLoad() {
-    console.log('跟唱模式页面加载完成');
     // 初始化多语言文本
     this.updateTexts();
     // 监听全局语言切换事件
@@ -49,8 +46,25 @@ Page({
   updateTexts() {
     this.setData({
       texts: {
-        songTitle: t('common.singMode') || '跟唱模式'
+        home: t('common.home'),
+        introduction: t('common.introduction'),
+        media: t('common.media'),
+        test: t('common.test')
       }
+    });
+  },
+
+  // 跳转到民歌视频专区
+  goToVideos() {
+    wx.navigateTo({
+      url: '/pages/media-list/media-list'
+    });
+  },
+
+  // 跳转到畲族文化介绍页
+  goToCulture() {
+    wx.navigateTo({
+      url: '/pages/SheZu/SheZu'
     });
   },
 
@@ -59,5 +73,3 @@ Page({
     this.updateTexts();
   }
 });
-
-

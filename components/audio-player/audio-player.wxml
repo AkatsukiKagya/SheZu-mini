@@ -1,0 +1,23 @@
+<view class="audio-player">
+  <view class="controls">
+    <button bindtap="togglePlay">{{ isPlaying ? '暂停' : '播放' }}</button>
+  </view>
+
+  <view class="progress-row">
+    <text class="time">{{ currentTimeText }}</text>
+
+    <slider
+      class="progress-slider"
+      min="0"
+      max="{{ duration }}"
+      step="1"
+      value="{{ currentTime }}"
+      bindchanging="onSliderChanging"
+      bindchange="onSliderChange"
+      block-size="14"
+      activeColor="#007aff"
+    ></slider>
+
+    <text class="time">{{ durationText }}</text>
+  </view>
+</view>

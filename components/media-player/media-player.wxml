@@ -1,0 +1,14 @@
+<view class="player">
+  <view wx:if="{{mode === 'video'}}" class="video-wrap">
+    <video src="{{media.video}}" controls objectFit="contain" class="video"></video>
+  </view>
+  <view wx:if="{{mode === 'audio'}}" class="audio-wrap">
+    <image class="cover" src="{{media.cover}}" mode="aspectFill" />
+    <view class="title">{{media.title}}</view>
+    <slider class="progress" value="{{progress}}" bindchange="onProgressChange" />
+    <button bindtap="togglePlay">{{isPlaying ? '⏸' : '▶'}}</button>
+  </view>
+  <button class="switch" bindtap="switchMode">{{mode === 'video' ? texts.switchToSing : texts.switchToVideo}}</button>
+</view>
+
+

@@ -5,12 +5,12 @@
     "pages/logs/logs",
     "pages/media-list/media-list",
     "pages/media-detail/media-detail",
+    "pages/test-page/test-page",
     "pages/sing-mode/sing-mode",
-    "pages/test-page/test-page"
+    "pages/home/home"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
     "navigationBarBackgroundColor": "#ffffff"
   },
   "tabBar": {
@@ -22,26 +22,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "/assets/icons/81x81.png",
-        "selectedIconPath": "/assets/icons/81x81.png"
+        "iconPath": "/assets/icons/home.png",
+        "selectedIconPath": "/assets/icons/home.png"
       },
       {
         "pagePath": "pages/SheZu/SheZu",
         "text": "介绍",
-        "iconPath": "/assets/icons/81x81.png",
-        "selectedIconPath": "/assets/icons/81x81.png"
+        "iconPath": "/assets/icons/idea.png",
+        "selectedIconPath": "/assets/icons/idea.png"
       },
       {
         "pagePath": "pages/media-list/media-list",
         "text": "音视频",
-        "iconPath": "/assets/icons/81x81.png",
-        "selectedIconPath": "/assets/icons/81x81.png"
+        "iconPath": "/assets/icons/video.png",
+        "selectedIconPath": "/assets/icons/video.png"
       },
       {
         "pagePath": "pages/test-page/test-page",
         "text": "测试页面",
-        "iconPath": "/assets/icons/81x81.png",
-        "selectedIconPath": "/assets/icons/81x81.png"
+        "iconPath": "/assets/icons/test-tube.png",
+        "selectedIconPath": "/assets/icons/test-tube.png"
       }
     ]
   },

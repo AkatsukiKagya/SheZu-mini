@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "视频列表"
+  "usingComponents": {
+    "language-switcher": "/components/language-switcher/language-switcher"
+  }
 }

@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText": "畲族数字博物馆",
   "navigationBarBackgroundColor": "#1a4780",
-  "navigationBarTextStyle": "white"
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "language-switcher": "/components/language-switcher/language-switcher"
+  }
 }

@@ -1,16 +1,22 @@
 <view class="container">
-  <view class="media-item" wx:for="{{mediaList}}" wx:key="id">
-    <view class="media-row">
-      <!-- 播放图标 -->
-      <text class="play-icon" data-id="{{item.id}}" bindtap="goDetail">▶</text>
-      <view class="media-info" bindtap="goDetail" data-id="{{item.id}}">
-        <text class="title">{{item.title}}</text>
-        <text class="desc">{{item.desc}}</text>
+  <!-- 语言切换器 -->
+  <language-switcher position="top-right" bind:languageChanged="onLanguageChanged"></language-switcher>
+  
+  <!-- 页面标题 -->
+  <view class="page-title">{{texts.title}}</view>
+  
+  <!-- 媒体列表 -->
+  <view class="media-list">
+    <view class="media-item" wx:for="{{mediaList}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <image class="media-cover" src="{{item.cover}}" mode="aspectFill"></image>
+      <view class="media-info">
+        <text class="media-title">{{item.title}}</text>
+        <text class="media-desc">{{item.desc}}</text>
+      </view>
+      <view class="play-btn">
+        <text class="play-icon">▶</text>
       </view>
     </view>
   </view>
-</view>
-<view class="footer">
-  <text class="placeholder">待补充...</text>
 </view>
 

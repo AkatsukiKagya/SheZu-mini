@@ -1,0 +1,53 @@
+<view class="container">
+
+<!-- 顶部Logo和标题 -->
+<view class="header">
+  <image src="/assets/images/logo.jpg" class="logo" mode="aspectFit"></image>
+  <text class="title">畲韵传声</text>
+</view>
+
+<!-- 图片展示区 -->
+<swiper class="image-swiper" autoplay interval="3000" circular>
+  <swiper-item>
+    <image src="/assets/images/banner1.jpg" class="banner-img"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="/assets/images/banner2.jpg" class="banner-img"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="/assets/images/banner3.jpg" class="banner-img"></image>
+  </swiper-item>
+</swiper>
+
+<!-- 简介信息 -->
+<view class="intro">
+  <text>
+    畲族是中国南方一个历史悠久的民族，以歌传情、以舞载史。
+    本小程序旨在传播畲族文化，展示民歌、风俗与精神。
+  </text>
+</view>
+
+<!-- 导航区域 -->
+<view class="nav-area">
+  <!-- 民歌视频专区 -->
+  <view class="nav-card" bindtap="goToVideos">
+    <image src="/assets/icons/music.png" class="nav-icon"></image>
+    <view class="nav-text">
+      <text class="nav-title">民歌视频专区</text>
+      <text class="nav-subtitle">观看与学习畲族民歌</text>
+    </view>
+    <image src="/assets/icons/arrow-right.png" class="arrow-icon"></image>
+  </view>
+
+  <!-- 畲族文化介绍 -->
+  <view class="nav-card" bindtap="goToCulture">
+    <image src="/assets/icons/book.png" class="nav-icon"></image>
+    <view class="nav-text">
+      <text class="nav-title">畲族文化介绍</text>
+      <text class="nav-subtitle">了解畲族的历史与风俗</text>
+    </view>
+    <image src="/assets/icons/arrow-right.png" class="arrow-icon"></image>
+  </view>
+</view>
+
+</view>

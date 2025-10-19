@@ -1,95 +1,106 @@
 <view class="container">
 
+<!-- 语言切换器 -->
+<language-switcher position="top-right" bind:languageChanged="onLanguageChanged"></language-switcher>
+
 <!-- Banner -->
 <view class="banner">
-    <image class="carousel-image" src="/assets/images/111.png" mode="aspectFill"></image>
+    <image class="carousel-image" src="{{images[currentIndex]}}" mode="aspectFill"></image>
     <!-- 左右箭头 -->
-    <view class="carousel-arrow left" bindtap="prevImage">{{ prevImage }} </view>
+    <view class="carousel-arrow left" bindtap="prevImage">{{ prevImage }}</view>
     <view class="carousel-arrow right" bindtap="nextImage">{{ nextImage }}</view>
     <!-- 图片上的文字 -->
     <view class="banner-mask"></view>
     <view class="banner-text">
-        <text class="banner-title">畲族数字博物馆- 非遗文化的传承与创新{{ nextLine }}</text>
-        <text class="banner-desc">抢救-留存民族记忆，打造精致生活，传承文化精髓</text>
+        <text class="banner-title">{{texts.bannerTitle}}{{ nextLine }}</text>
+        <text class="banner-desc">{{texts.bannerDesc}}</text>
+    </view>
+    <!-- 轮播指示器 -->
+    <view class="carousel-indicators">
+        <view class="indicator" wx:for="{{images}}" wx:key="index" 
+              class="{{index === currentIndex ? 'active' : ''}}"
+              bindtap="goToImage" data-index="{{index}}">
+        </view>
     </view>
 </view>
 
 <!-- 欢迎语 -->
 <view class="welcome">
-    <text class="welcome-title">欢迎来到畲族歌曲数字博物馆</text>
-    <text class="welcome-text">畲族民歌是畲族文化的璀璨明珠，承载着畲族的历史记忆、生活智慧与情感表达。然而，随着时代变迁，浙江畲族聚居区的民歌手抄本面临老化、损毁，音像资料也因存储介质等问题有丢失风险。</text>
-    <text class="welcome-text">畲歌数字博物馆致力于对这些珍贵文化遗产进行抢救性采集与数字化保护，通过构建系统、丰富的数字化资源库，打造沉浸式展示与体验平台，让畲族文化在数字时代焕发新的生命力。</text>
+    <text class="welcome-title">{{texts.welcomeTitle}}</text>
+    <text class="welcome-text">{{texts.welcomeText1}}</text>
+    <text class="welcome-text">{{texts.welcomeText2}}</text>
 </view>
 
-<!-- 非遗文化 -->
+<!-- 项目介绍 -->
 <view class="heritage">
     <view class="heritage-content">
-        <!-- <view class="heritage-image">
-            <image src="/assets/images/11.png" mode="aspectFill"></image>
-        </view> -->
         <view class="heritage-text">
-            <text class="heritage-title">非遗文化 - 畲族民歌</text>
-            <text class="heritage-text-content">畲族民歌作为中国非物质文化遗产的重要代表，承载着畲族悠久的历史与文化。它不只是一种传统音乐形式，更是畲族文化传承的鲜活载体</text>
-            <text class="heritage-text-content">畲族民歌的创作与演唱源远流长，从劳作号子、爱情倾诉到民俗仪式，每一种表达都凝聚了畲族人民的生活智慧与情感。这种艺术形式不仅体现了畲族独特的文化魅力，也展现了他们对生活的热爱与对美好未来的向往。</text>
-            <text class="heritage-text-content">畲族民歌以其独特的旋律、生动的歌词和真挚的情感而闻名。它不仅具有重要的文化价值，更具有极高的艺术欣赏和研究价值。</text>
+            <text class="heritage-title">{{texts.projectTitle}}</text>
+            <text class="heritage-text-content">{{texts.projectText1}}</text>
+            <text class="heritage-text-content">{{texts.projectText2}}</text>
+            <view class="heritage-link">
+                <navigator url="/pages/SheZu/SheZu" class="link-btn">
+                    <text>{{texts.learnMore}}</text>
+                </navigator>
+            </view>
         </view>
     </view>
 </view>
 
 <!-- 工艺流程 -->
 <view class="process">
-    <text class="process-title">传统艺术形式</text>
+    <text class="process-title">{{texts.artFormsTitle}}</text>
     <view class="process-steps">
         <view class="step">
             <image src="/assets/images/1.png" mode="aspectFill"></image>
-            <text class="step-title">劳动号子</text>
-            <text class="step-text">畲族人民劳作时传唱，节奏明快，能起到鼓舞士气，协调动作的作用，是畲族人民在田地山头劳作中的智慧体现。</text>
+            <text class="step-title">{{texts.laborSong}}</text>
+            <text class="step-text">{{texts.laborSongDesc}}</text>
         </view>
         <view class="step">
             <image src="/assets/images/2.png" mode="aspectFill"></image>
-            <text class="step-title">山歌对唱</text>
-            <text class="step-text">畲族青年男女常用这种形式交流感情，歌词即兴创作，充满了生活气息与浪漫色彩，是畲族青年传递情意的重要方式。</text>
+            <text class="step-title">{{texts.mountainSong}}</text>
+            <text class="step-text">{{texts.mountainSongDesc}}</text>
         </view>
         <view class="step">
             <image src="/assets/images/3.png" mode="aspectFill"></image>
-            <text class="step-title">仪式歌谣</text>
-            <text class="step-text">在畲族祭祀、婚丧等民俗仪式中演唱，有着庄重的氛围和特殊的文化内涵，承载着畲族的历史记忆与信仰文化。</text>
+            <text class="step-title">{{texts.ritualSong}}</text>
+            <text class="step-text">{{texts.ritualSongDesc}}</text>
         </view>
         <view class="step">
             <image src="/assets/images/4.png" mode="aspectFill"></image>
-            <text class="step-title">叙事歌谣</text>
-            <text class="step-text">以讲述民间故事、历史传说和生活趣事为内容，歌词通俗易懂且情节完整，旋律平缓流畅，是畲族人民传承民间文化的重要方式。</text>
+            <text class="step-title">{{texts.narrativeSong}}</text>
+            <text class="step-text">{{texts.narrativeSongDesc}}</text>
         </view>
     </view>
 </view>
 
 <!-- 民歌艺术 -->
 <view class="art">
-    <text class="art-title">民歌艺术精品</text>
+    <text class="art-title">{{texts.artWorksTitle}}</text>
     <view class="art-list">
         <view class="art-item">
             <image src="/assets/images/gaohuang.png" mode="widthFix"></image>
-            <text class="art-item-title">《高皇歌》</text>
+            <text class="art-item-title">{{texts.gaohuang}}</text>
         </view>
         <view class="art-item">
             <image src="/assets/images/dayan.png" mode="widthFix"></image>
-            <text class="art-item-title">《打盐调》</text>
+            <text class="art-item-title">{{texts.dayan}}</text>
         </view>
         <view class="art-item">
             <image src="/assets/images/songlang.png" mode="widthFix"></image>
-            <text class="art-item-title">《送郎》</text>
+            <text class="art-item-title">{{texts.songlang}}</text>
         </view>
         <view class="art-item">
             <image src="/assets/images/jizu.png" mode="widthFix"></image>
-            <text class="art-item-title">《祭祖歌》</text>
+            <text class="art-item-title">{{texts.jizu}}</text>
         </view>
         <view class="art-item">
             <image src="/assets/images/caicha.png" mode="widthFix"></image>
-            <text class="art-item-title">《采茶歌》</text>
+            <text class="art-item-title">{{texts.caicha}}</text>
         </view>
         <view class="art-item">
             <image src="/assets/images/qianxi.png" mode="widthFix"></image>
-            <text class="art-item-title">《迁徙歌》</text>
+            <text class="art-item-title">{{texts.qianxi}}</text>
         </view>
     </view>
 </view>
@@ -97,7 +108,7 @@
 
 <!-- 页脚 -->
 <view class="footer">
-    <text>{{ copyrightText }}</text>
+    <text>{{texts.copyright}}</text>
 </view>
 
 </view>

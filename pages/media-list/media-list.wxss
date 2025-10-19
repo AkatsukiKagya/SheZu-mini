@@ -1,58 +1,101 @@
+/* 媒体列表页面样式 */
 .container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
   padding: 20rpx;
-  background-color: #f0f8ff;
+}
+
+/* 页面标题 */
+.page-title {
+  text-align: center;
+  font-size: 36rpx;
+  color: #2c3e50;
+  font-weight: 600;
+  margin: 20rpx 0 40rpx 0;
+  padding: 20rpx;
+}
+
+/* 媒体列表 */
+.media-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20rpx;
 }
 
+/* 媒体项目 */
 .media-item {
-  width: 600rpx; /* 统一宽度 */
-  padding: 20rpx;
-  margin-bottom: 20rpx;
-  background-color: #fff;
+  background: white;
   border-radius: 16rpx;
-  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.1);
-}
-
-.media-row {
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   display: flex;
   align-items: center;
+  padding: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.media-item:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 8rpx 20rpx rgba(0, 0, 0, 0.15);
+}
+
+/* 媒体封面 */
+.media-cover {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+/* 媒体信息 */
+.media-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.media-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.media-desc {
+  font-size: 24rpx;
+  color: #7f8c8d;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 播放按钮 */
+.play-btn {
+  width: 80rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20rpx;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.play-btn:active {
+  transform: scale(0.95);
 }
 
 .play-icon {
-  font-size: 36rpx;
-  color: #1a4780;
-  margin-right: 20rpx;
-  cursor: pointer;
-}
-
-.media-info {
-  flex: 1;
-}
-
-.title {
+  color: white;
   font-size: 32rpx;
   font-weight: bold;
-  color: #1a4780;
-  margin-bottom: 6rpx;
-}
-
-.desc {
-  font-size: 24rpx;
-  color: #555;
-  line-height: 1.6;
-}
-
-.placeholder {
-  font-size: 24rpx;
-  color: #999;
-  text-align: center; /* 底部文字居中 */
-}
-
-.footer {
-  text-align: center; 
-  padding: 10px;
-  color: white; 
-  font-size: 14px; 
 }

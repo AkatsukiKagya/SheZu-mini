@@ -18,4 +18,10 @@
   <button wx:if="{{showReplay}}" bindtap="replayVideo" class="replay-btn">
     重新播放
   </button>
+
+  <text class="title">测试页面</text>
+  <button bindtap="goHome">跳转到首页</button>
+
 </view>
+
+<audio-player src="https://akatsukikagya.github.io/Aka-media/media/shezu/audios/shange.mp3"></audio-player>

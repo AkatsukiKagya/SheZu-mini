@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "畲族文化"
+  "usingComponents": {
+    "language-switcher": "/components/language-switcher/language-switcher"
+  }
 }

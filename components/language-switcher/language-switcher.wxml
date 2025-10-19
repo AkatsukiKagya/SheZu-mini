@@ -1,0 +1,31 @@
+<!-- 语言切换组件 -->
+<view class="language-switcher {{position}}" wx:if="{{!isOpen}}">
+  <view class="language-btn" bindtap="toggleDropdown">
+    <text class="language-flag">{{currentLang === 'zh-CN' ? '🇨🇳' : '🇺🇸'}}</text>
+    <text class="language-text" wx:if="{{showText}}">{{currentLang === 'zh-CN' ? '中文' : 'EN'}}</text>
+    <text class="dropdown-arrow">▼</text>
+  </view>
+</view>
+
+<!-- 下拉菜单 -->
+<view class="language-dropdown {{position}}" wx:if="{{isOpen}}">
+  <view class="dropdown-mask" bindtap="onMaskTap"></view>
+  <view class="dropdown-content">
+    <view class="dropdown-item {{currentLang === 'zh-CN' ? 'active' : ''}}" 
+          bindtap="onSwitchLanguage" 
+          data-lang="zh-CN">
+      <text class="item-flag">🇨🇳</text>
+      <text class="item-text">中文</text>
+      <text class="item-check" wx:if="{{currentLang === 'zh-CN'}}">✓</text>
+    </view>
+    <view class="dropdown-item {{currentLang === 'en-US' ? 'active' : ''}}" 
+          bindtap="onSwitchLanguage" 
+          data-lang="en-US">
+      <text class="item-flag">🇺🇸</text>
+      <text class="item-text">English</text>
+      <text class="item-check" wx:if="{{currentLang === 'en-US'}}">✓</text>
+    </view>
+  </view>
+</view>
+
+

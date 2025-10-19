@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "跟唱模式"
+  "usingComponents": {
+    "audio-player": "/components/audio-player/audio-player"
+  }
 }
+
+

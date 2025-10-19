@@ -1,3 +1,5 @@
 {
-  "navigationBarTitleText": "测试页面"
+  "usingComponents": {
+    "audio-player": "/components/audio-player/audio-player"
+  }
 }

@@ -1,27 +1,71 @@
 <!--pages/SheZu/SheZu.wxml-->
 <view class="container">
-  <view class="title">畲族文化传播</view>
+  <!-- 语言切换器 -->
+  <language-switcher position="top-right" bind:languageChanged="onLanguageChanged"></language-switcher>
+  
+  <!-- 返回按钮 -->
+  <view class="back-btn-wrapper">
+    <navigator url="/pages/index/index" class="back-btn">
+      <text>{{texts.backHome}}</text>
+    </navigator>
+  </view>
+  
+  <view class="title">{{texts.title}}</view>
 
+  <!-- 畲族简介 -->
   <view class="section">
-    <text class="section-title">📖 畲族简介</text>
-    <text class="section-text">
-      畲族是中国南方的少数民族，主要分布在福建、浙江、江西和广东一带，
-      以独特的语言、服饰和习俗著称。
-    </text>
+    <text class="section-title">{{texts.intro.title}}</text>
+    <text class="section-text">{{texts.intro.text1}}</text>
+    <text class="section-text">{{texts.intro.text2}}</text>
   </view>
 
+  <!-- 历史起源 -->
   <view class="section">
-    <text class="section-title">👘 传统服饰</text>
+    <text class="section-title">{{texts.history.title}}</text>
+    <text class="section-text">{{texts.history.text1}}</text>
+    <text class="section-text">{{texts.history.text2}}</text>
+  </view>
+
+  <!-- 传统服饰 -->
+  <view class="section">
+    <text class="section-title">{{texts.clothing.title}}</text>
     <image class="image" src="/assets/images/SheZuClothes.jpg" mode="widthFix"/>
-    <text class="section-text">
-      畲族妇女传统服饰以青色为主，绣有凤凰、龙等图案，寓意吉祥。
-    </text>
+    <text class="section-text">{{texts.clothing.text1}}</text>
+    <text class="section-text">{{texts.clothing.text2}}</text>
   </view>
 
+  <!-- 传统节日 -->
   <view class="section">
-    <text class="section-title">🎉 传统节日</text>
-    <text class="section-text">
-      三月三是畲族最重要的节日，人们会祭祖、唱山歌、对歌传情。
-    </text>
+    <text class="section-title">{{texts.festival.title}}</text>
+    <text class="section-text">{{texts.festival.text1}}</text>
+    <text class="section-text">{{texts.festival.text2}}</text>
+  </view>
+
+  <!-- 语言文化 -->
+  <view class="section">
+    <text class="section-title">{{texts.language.title}}</text>
+    <text class="section-text">{{texts.language.text1}}</text>
+    <text class="section-text">{{texts.language.text2}}</text>
+  </view>
+
+  <!-- 建筑特色 -->
+  <view class="section">
+    <text class="section-title">{{texts.architecture.title}}</text>
+    <text class="section-text">{{texts.architecture.text1}}</text>
+    <text class="section-text">{{texts.architecture.text2}}</text>
+  </view>
+
+  <!-- 饮食文化 -->
+  <view class="section">
+    <text class="section-title">{{texts.food.title}}</text>
+    <text class="section-text">{{texts.food.text1}}</text>
+    <text class="section-text">{{texts.food.text2}}</text>
+  </view>
+
+  <!-- 文化传承 -->
+  <view class="section highlight">
+    <text class="section-title">{{texts.heritage.title}}</text>
+    <text class="section-text">{{texts.heritage.text1}}</text>
+    <text class="section-text">{{texts.heritage.text2}}</text>
   </view>
 </view>

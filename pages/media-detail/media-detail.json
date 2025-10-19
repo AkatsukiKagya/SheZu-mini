@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "视频目录",
-  "navigationStyle": "default"
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "language-switcher": "/components/language-switcher/language-switcher",
+    "media-player": "/components/media-player/media-player"
+  }
 }
